@@ -7,6 +7,9 @@ logging.basicConfig(filename="scaned_dirs_treeview.log",
 					filemode='a+')
 logger=logging.getLogger()
 logger.setLevel(logging.INFO)
+f = open("scaned_dirs_treeview.log","w+")
+f.write("***Dirs In TreeViews***\n\n")
+f.close()
 for dirpath, dirnames, filenames in os.walk(path):
     directory_level = dirpath.replace(path, "")
     directory_level = directory_level.count(os.sep)
